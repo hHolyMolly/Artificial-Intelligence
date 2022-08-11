@@ -326,7 +326,10 @@ let _slideToggle = (target, duration = 500) => {
 
 //< " СКРИПТЫ " >=============================================================================================================>//
 
-new WOW().init();
+new WOW({
+	offset: 300,
+	mobile: false,
+}).init();
 
 let isMobile = {
 	Android: function () { return navigator.userAgent.match(/Android/i); },
@@ -370,3 +373,25 @@ function burgerMenu() {
 	}
 }
 burgerMenu()
+
+function scrollToBlock() {
+	document.querySelectorAll('.header-menu__list-link[href^="#"').forEach((link) => {
+		link.addEventListener("click", function (e) {
+			e.preventDefault();
+
+			let href = this.getAttribute("href").substring(1);
+
+			const scrollTarget = document.getElementById(href);
+
+			const topOffset = 120;
+			const elementPosition = scrollTarget.getBoundingClientRect().top;
+			const offsetPosition = elementPosition - topOffset;
+
+			window.scrollBy({
+				top: offsetPosition,
+				behavior: "smooth",
+			});
+		});
+	});
+}
+scrollToBlock();

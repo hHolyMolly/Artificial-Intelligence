@@ -102,7 +102,7 @@ input {
 }
 
 .title {
-  margin: 0 auto;
+  margin-left: 37%;
   /* Если меньше контейнера */
   padding-top: 12px;
   /* Если меньше контейнера */
@@ -298,9 +298,15 @@ body._lock-scroll {
   max-width: 830px;
 }
 .header__body {
+  /* Если меньше контейнера */
   min-height: 65px;
   display: flex;
   align-items: center;
+}
+@media (max-width: 1130px) {
+  .header__body {
+    min-height: calc(55px + 10 * ((100vw - 320px) / 810));
+  }
 }
 .header__menu {
   display: flex;
@@ -483,23 +489,9 @@ body._lock-scroll {
 }
 
 .main-block__body {
-  /* Если меньше контейнера */
-  padding-top: 50px;
-  /* Если меньше контейнера */
-  padding-bottom: 600px;
   display: flex;
   flex-direction: column;
   position: relative;
-}
-@media (max-width: 1130px) {
-  .main-block__body {
-    padding-top: calc(40px + 10 * ((100vw - 320px) / 810));
-  }
-}
-@media (max-width: 1130px) {
-  .main-block__body {
-    padding-bottom: calc(160px + 440 * ((100vw - 320px) / 810));
-  }
 }
 .main-block__title {
   margin-left: auto;
@@ -532,6 +524,7 @@ body._lock-scroll {
 }
 .main-block-e__item {
   position: absolute;
+  z-index: -1;
 }
 .main-block-e__item img {
   max-width: 100%;
@@ -543,7 +536,7 @@ body._lock-scroll {
   /* Если меньше контейнера */
   top: 100px;
   /* Если меньше контейнера */
-  left: 0px;
+  left: 80px;
 }
 @media (max-width: 1130px) {
   .main-block-e__item_01 {
@@ -552,21 +545,22 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .main-block-e__item_01 {
-    top: calc(10px + 90 * ((100vw - 320px) / 810));
+    top: calc(-25px + 125 * ((100vw - 320px) / 810));
   }
 }
 @media (max-width: 1130px) {
   .main-block-e__item_01 {
-    left: calc(-30px + 30 * ((100vw - 320px) / 810));
+    left: calc(-30px + 110 * ((100vw - 320px) / 810));
   }
 }
 .main-block-e__item_02 {
   /* Если меньше контейнера */
   max-width: 430px;
   width: 100%;
+  /* Если меньше контейнера */
   top: 140px;
   /* Если меньше контейнера */
-  right: -60px;
+  right: -80px;
 }
 @media (max-width: 1130px) {
   .main-block-e__item_02 {
@@ -575,12 +569,16 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .main-block-e__item_02 {
-    right: calc(-20px + -40 * ((100vw - 320px) / 810));
+    top: calc(110px + 30 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .main-block-e__item_02 {
+    right: calc(-20px + -60 * ((100vw - 320px) / 810));
   }
 }
 
 .dragons__body {
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -591,34 +589,90 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .dragons__title:not(:last-child) {
-    margin-bottom: calc(25px + 40 * ((100vw - 320px) / 810));
+    margin-bottom: calc(45px + 20 * ((100vw - 320px) / 810));
   }
 }
 .dragons__column {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  row-gap: 30px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+@media (max-width: 992.2px) {
+  .dragons__column {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+@media (max-width: 992.2px) {
+  .dragons__column {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+@media (max-width: 425.2px) {
+  .dragons__column {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+}
+@media (max-width: 375.2px) {
+  .dragons__column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .dragons-column__card {
-  padding: 40px 20px;
+  /* Если меньше контейнера */
+  padding-top: 40px;
+  /* Если меньше контейнера */
+  padding-right: 20px;
+  /* Если меньше контейнера */
+  padding-left: 20px;
+  /* Если меньше контейнера */
+  padding-bottom: 40px;
   max-width: 230px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+@media (max-width: 1130px) {
+  .dragons-column__card {
+    padding-top: calc(20px + 20 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .dragons-column__card {
+    padding-right: calc(30px + -10 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .dragons-column__card {
+    padding-left: calc(30px + -10 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .dragons-column__card {
+    padding-bottom: calc(20px + 20 * ((100vw - 320px) / 810));
+  }
 }
 .dragons-column__card:nth-child(odd) {
   background-image: url("../img/page/dragons/item_01.png");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .dragons-column__card:nth-child(even) {
   background-image: url("../img/page/dragons/item_02.png");
-  background-repeat: no-repeat;
-  background-position: center;
 }
 .dragons-column__image {
-  min-width: 200px;
+  /* Если меньше контейнера */
+  max-width: 200px;
+}
+@media (max-width: 1130px) {
+  .dragons-column__image {
+    max-width: calc(140px + 60 * ((100vw - 320px) / 810));
+  }
 }
 .dragons-column__image:not(:last-child) {
   /* Если меньше контейнера */
@@ -680,6 +734,8 @@ body._lock-scroll {
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 @media (max-width: 1130px) {
   .navigation__link {
@@ -715,7 +771,38 @@ body._lock-scroll {
 }
 
 .page {
+  /* Если меньше контейнера */
   padding-top: 65px;
   flex: 1 1 auto;
   height: 5000px;
+}
+@media (max-width: 1130px) {
+  .page {
+    padding-top: calc(55px + 10 * ((100vw - 320px) / 810));
+  }
+}
+.page__main-block {
+  /* Если меньше контейнера */
+  padding-top: 50px;
+  /* Если меньше контейнера */
+  padding-bottom: 600px;
+}
+@media (max-width: 1130px) {
+  .page__main-block {
+    padding-top: calc(40px + 10 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .page__main-block {
+    padding-bottom: calc(180px + 420 * ((100vw - 320px) / 810));
+  }
+}
+.page__dragons:not(:last-child) {
+  /* Если меньше контейнера */
+  padding-bottom: 100px;
+}
+@media (max-width: 1130px) {
+  .page__dragons:not(:last-child) {
+    padding-bottom: calc(60px + 40 * ((100vw - 320px) / 810));
+  }
 }
