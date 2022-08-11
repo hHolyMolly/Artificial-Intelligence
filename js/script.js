@@ -378,6 +378,8 @@ function scrollToBlock() {
 	document.querySelectorAll('.header-menu__list-link[href^="#"').forEach((link) => {
 		link.addEventListener("click", function (e) {
 			e.preventDefault();
+			document.getElementById("menu-body").classList.remove("_active");
+			document.body.classList.remove("_lock-scroll");
 
 			let href = this.getAttribute("href").substring(1);
 
