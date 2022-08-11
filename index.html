@@ -33,12 +33,6 @@
 <meta name="twitter:image:alt" content="Dragons">
 <!-- Twitter -->
 
-<link rel="stylesheet" href="css/style.css?v=1">
-<link rel="stylesheet" href="css/media.css?v=1">
-<link rel="stylesheet" href="css/bootstrap-grid.css">
-<link rel="stylesheet" href="libraries/swiper/swiper-bundle.min.css">
-<link rel="stylesheet" href="libraries/animate/animate.min.css">
-
 <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
@@ -54,11 +48,19 @@
          <header class="header">
    <div class="header__container _container">
       <div class="header__body">
-         <nav class="header__menu header-menu" id="menu-body">
+         <div class="header__logo-wrapper">
+            <a class="header__logo" href="index.html">
+               <img src="img/logo.png" alt="header-logo">
+            </a>
+         </div>
+         <nav class="header__menu header-menu" id="menu-body" data-da=".header__logo-wrapper,992.2,0">
             <button class="header-menu__burger" id="menu-open" type="button"><span></span></button>
             <div class="header-menu__wrapper"></div>
             <div class="header-menu__body">
                <div class="header-menu__top">
+                  <a class="header__logo" href="index.html">
+                     <img src="img/logo.png" alt="header-logo">
+                  </a>
                   <button class="header-menu__close close" id="menu-close" type="button"></button>
                </div>
                <div class="header-menu__content">
@@ -167,13 +169,51 @@
                   </div>
                </div>
             </section>
-            <section class="video-block">
+            <section class="page__video-block video-block">
                <div class="_container">
                   <div class="video-block__body">
                      <h2 class="video-block__title title wow animate__animated animate__fadeInUp">Video</h2>
                      <div class="video-block__item wow animate__animated animate__fadeIn" data-wow-duration="1.3s"
                         data-wow-delay="0s">
                         <img src="img/page/video/image.png" alt="video-image">
+                     </div>
+                  </div>
+               </div>
+            </section>
+            <section class="page__play play">
+               <div class="_container">
+                  <div class="play__body">
+                     <h2 class="play__title title  wow animate__animated animate__fadeInUp">
+                        HOW TO PLAY
+                     </h2>
+                     <div class="play__column play-column  wow animate__animated animate__fadeIn">
+                        <article class="play-column__card">
+                           <div class="play-column__image">
+                              <img src="img/page/play/items/01.png" alt="play-01">
+                           </div>
+                           <h3 class="play-column__title">Find</h3>
+                           <p class="play-column__text">
+                              Buy or find an egg at the game location.
+                           </p>
+                        </article>
+                        <article class="play-column__card">
+                           <div class="play-column__image">
+                              <img src="img/page/play/items/02.png" alt="play-02">
+                           </div>
+                           <h3 class="play-column__title">Retrieve</h3>
+                           <p class="play-column__text">
+                              Open an egg to get a new dragon.
+                           </p>
+                        </article>
+                        <article class="play-column__card">
+                           <div class="play-column__image">
+                              <img src="img/page/play/items/03.png" alt="play-03">
+                           </div>
+                           <h3 class="play-column__title">Play</h3>
+                           <p class="play-column__text">
+                              Collect, use, or sell your dragon.
+                           </p>
+                        </article>
                      </div>
                   </div>
                </div>
@@ -189,7 +229,7 @@
       </div>
    </div>
 </footer>
-      <div class="navigation">
+      <div class="navigation" data-da=".header__body,992.2,1">
          <a class="navigation__link wow animate__animated animate__fadeInRight" data-wow-delay="0.1s"
             href="https://twitter.com/silencio_off?s=21" target="_blank">
             <svg class="navigation__icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">

@@ -1,5 +1,5 @@
 //< " ПОДКЛЮЧЕНИЕ JS КОМПОНЕНТОВ " >=============================================================================================================>//
-/* function dynamicAdaptive() {
+function dynamicAdaptive() {
 	function DynamicAdapt(type) {
 		this.type = type;
 	}
@@ -142,9 +142,9 @@
 	da.init();
 
 }
-dynamicAdaptive(); // ДИНАМИЧЕСКИЙ АДАПТИВ */
+dynamicAdaptive(); // ДИНАМИЧЕСКИЙ АДАПТИВ
 
-/* const spollersArray = document.querySelectorAll('[data-spollers]');
+const spollersArray = document.querySelectorAll('[data-spollers]');
 
 if (spollersArray.length > 0) {
 	// Получение обычных спойлеров
@@ -322,7 +322,7 @@ let _slideToggle = (target, duration = 500) => {
 	} else {
 		return _slideUp(target, duration);
 	}
-}; // СПОЙЛЕРЫ */
+}; // СПОЙЛЕРЫ
 
 //< " СКРИПТЫ " >=============================================================================================================>//
 
