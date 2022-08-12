@@ -1160,7 +1160,7 @@ body._lock-scroll {
   top: 90px;
   /* Если меньше контейнера */
   right: 100px;
-  opacity: 0.6;
+  opacity: 0.7;
   /* Если меньше контейнера */
   font-size: 30px;
   line-height: 120%;
@@ -1168,17 +1168,17 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .roadmap__title_second {
-    top: calc(20px + 70 * ((100vw - 320px) / 810));
+    top: calc(60px + 30 * ((100vw - 320px) / 810));
   }
 }
 @media (max-width: 1130px) {
   .roadmap__title_second {
-    right: calc(20px + 80 * ((100vw - 320px) / 810));
+    right: calc(30px + 70 * ((100vw - 320px) / 810));
   }
 }
 @media (max-width: 1130px) {
   .roadmap__title_second {
-    font-size: calc(18px + 12 * ((100vw - 320px) / 810));
+    font-size: calc(16px + 14 * ((100vw - 320px) / 810));
   }
 }
 .roadmap__inner {
@@ -1196,7 +1196,7 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .roadmap__inner {
-    padding-top: calc(50px + 10 * ((100vw - 320px) / 810));
+    padding-top: calc(30px + 30 * ((100vw - 320px) / 810));
   }
 }
 @media (max-width: 1130px) {
@@ -1212,6 +1212,37 @@ body._lock-scroll {
 @media (max-width: 1130px) {
   .roadmap__inner {
     padding-bottom: calc(30px + 30 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1100.2px) {
+  .roadmap__inner {
+    max-width: 856px;
+    width: 100%;
+  }
+}
+@media (max-width: 830.2px) {
+  .roadmap__inner {
+    max-width: 656px;
+  }
+}
+@media (max-width: 670.2px) {
+  .roadmap__inner {
+    max-width: 456px;
+  }
+}
+@media (max-width: 600.2px) {
+  .roadmap__inner {
+    max-width: 400px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap__inner {
+    max-width: 360px;
+  }
+}
+@media (max-width: 400.2px) {
+  .roadmap__inner {
+    max-width: 290px;
   }
 }
 .roadmap__column {
@@ -1249,6 +1280,17 @@ body._lock-scroll {
     margin-bottom: calc(20px + 10 * ((100vw - 320px) / 810));
   }
 }
+@media (max-width: 830.2px) {
+  .roadmap-column__item {
+    /* Если меньше контейнера */
+    min-height: 110px;
+  }
+}
+@media (max-width: 830.2px) and (max-width: 1130px) {
+  .roadmap-column__item {
+    min-height: calc(80px + 30 * ((100vw - 320px) / 810));
+  }
+}
 .roadmap-column__item_content {
   /* Если меньше контейнера */
   min-height: 90px;
@@ -1265,10 +1307,28 @@ body._lock-scroll {
     min-height: calc(60px + 30 * ((100vw - 320px) / 810));
   }
 }
+@media (max-width: 830.2px) {
+  .roadmap-column__item_content {
+    /* Если меньше контейнера */
+    min-height: 110px;
+    max-width: 60.9%;
+  }
+}
+@media (max-width: 830.2px) and (max-width: 1130px) {
+  .roadmap-column__item_content {
+    min-height: calc(80px + 30 * ((100vw - 320px) / 810));
+  }
+}
 .roadmap-column__item_first .roadmap-column__item_content {
   flex-direction: row;
   left: 0;
   background-color: #e8e5b0;
+}
+@media (max-width: 830.2px) {
+  .roadmap-column__item_first .roadmap-column__item_content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 .roadmap-column__item_first .roadmap-column__element_01 {
   right: 40px;
@@ -1282,52 +1342,226 @@ body._lock-scroll {
 .roadmap-column__item_first .roadmap-column__element_04 {
   right: 8px;
 }
+@media (max-width: 1100.2px) {
+  .roadmap-column__item_first .roadmap-column__element_01 {
+    right: 29px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_02 {
+    right: 33px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_03 {
+    right: 21px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_04 {
+    right: -5px;
+  }
+}
+@media (max-width: 830.2px) {
+  .roadmap-column__item_first .roadmap-column__element_01 {
+    right: 44px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_02 {
+    right: 44px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_03 {
+    right: 38px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_04 {
+    right: 29px;
+  }
+}
+@media (max-width: 670.2px) {
+  .roadmap-column__item_first .roadmap-column__element_01 {
+    right: 19px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_02 {
+    right: 22px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_03 {
+    right: 13px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_04 {
+    right: 8px;
+  }
+}
+@media (max-width: 600.2px) {
+  .roadmap-column__item_first .roadmap-column__element_01 {
+    right: 17px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_02 {
+    right: 19px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_03 {
+    right: 11px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_04 {
+    right: 4px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap-column__item_first .roadmap-column__element_01 {
+    right: 20px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_02 {
+    right: 21px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_03 {
+    right: 13px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_04 {
+    right: 8px;
+  }
+}
+@media (max-width: 400.2px) {
+  .roadmap-column__item_first .roadmap-column__element_01 {
+    right: 15px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_02 {
+    right: 16px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_03 {
+    right: 9px;
+  }
+  .roadmap-column__item_first .roadmap-column__element_04 {
+    right: 4px;
+  }
+}
 .roadmap-column__item_first .roadmap-column__title {
   flex: 0 1 150px;
+}
+@media (max-width: 1100.2px) {
+  .roadmap-column__item_first .roadmap-column__title {
+    flex: 0 1 100px;
+  }
+}
+@media (max-width: 830.2px) {
+  .roadmap-column__item_first .roadmap-column__title {
+    flex: 0 1 0px;
+  }
+}
+.roadmap-column__item_first .roadmap-column__list {
+  padding-right: 30px;
 }
 .roadmap-column__item_second .roadmap-column__item_content {
   flex-direction: row-reverse;
   background-color: #dadada;
   right: 0;
 }
+@media (max-width: 830.2px) {
+  .roadmap-column__item_second .roadmap-column__item_content {
+    flex-direction: column;
+    align-items: flex-end;
+  }
+}
 .roadmap-column__item_second .roadmap-column__element_01 {
-  /* Если меньше контейнера */
   left: 40px;
 }
-@media (max-width: 1130px) {
-  .roadmap-column__item_second .roadmap-column__element_01 {
-    left: calc(20px + 20 * ((100vw - 320px) / 810));
-  }
-}
 .roadmap-column__item_second .roadmap-column__element_02 {
-  /* Если меньше контейнера */
   left: 45px;
 }
-@media (max-width: 1130px) {
-  .roadmap-column__item_second .roadmap-column__element_02 {
-    left: calc(25px + 20 * ((100vw - 320px) / 810));
-  }
-}
 .roadmap-column__item_second .roadmap-column__element_03 {
-  /* Если меньше контейнера */
   left: 32px;
 }
-@media (max-width: 1130px) {
-  .roadmap-column__item_second .roadmap-column__element_03 {
-    left: calc(17px + 15 * ((100vw - 320px) / 810));
-  }
-}
 .roadmap-column__item_second .roadmap-column__element_04 {
-  /* Если меньше контейнера */
   left: 8px;
 }
-@media (max-width: 1130px) {
+@media (max-width: 1100.2px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: 29px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: 33px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: 21px;
+  }
   .roadmap-column__item_second .roadmap-column__element_04 {
-    left: calc(0px + 8 * ((100vw - 320px) / 810));
+    left: -5px;
+  }
+}
+@media (max-width: 830.2px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: 44px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: 44px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: 38px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_04 {
+    left: 29px;
+  }
+}
+@media (max-width: 670.2px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: 19px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: 22px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: 13px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_04 {
+    left: 8px;
+  }
+}
+@media (max-width: 600.2px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: 17px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: 19px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: 11px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_04 {
+    left: 4px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: 20px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: 21px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: 13px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_04 {
+    left: 8px;
+  }
+}
+@media (max-width: 400.2px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: 15px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: 16px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: 9px;
+  }
+  .roadmap-column__item_second .roadmap-column__element_04 {
+    left: 4px;
   }
 }
 .roadmap-column__item_second .roadmap-column__list {
+  padding-left: 30px;
   flex: 0 1 170px;
+}
+@media (max-width: 1100.2px) {
+  .roadmap-column__item_second .roadmap-column__list {
+    flex: 0 1 125px;
+  }
+}
+@media (max-width: 830.2px) {
+  .roadmap-column__item_second .roadmap-column__list {
+    flex: 0 1 0px;
+  }
 }
 .roadmap-column__title {
   /* Если меньше контейнера */
@@ -1338,6 +1572,23 @@ body._lock-scroll {
 @media (max-width: 1130px) {
   .roadmap-column__title {
     font-size: calc(18px + 12 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1100.2px) {
+  .roadmap-column__title {
+    /* Если меньше контейнера */
+    font-size: 22px;
+  }
+}
+@media (max-width: 1100.2px) and (max-width: 1130px) {
+  .roadmap-column__title {
+    font-size: calc(14px + 8 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 830.2px) {
+  .roadmap-column__title {
+    margin-bottom: 5px;
+    display: inline-flex;
   }
 }
 .roadmap-column__list {
@@ -1355,9 +1606,90 @@ body._lock-scroll {
     font-size: calc(10px + 3 * ((100vw - 320px) / 810));
   }
 }
+@media (max-width: 1100.2px) {
+  .roadmap-column__list-item {
+    /* Если меньше контейнера */
+    font-size: 12px;
+  }
+}
+@media (max-width: 1100.2px) and (max-width: 1130px) {
+  .roadmap-column__list-item {
+    font-size: calc(9px + 3 * ((100vw - 320px) / 810));
+  }
+}
 .roadmap-column__element {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   z-index: 3;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+@media (max-width: 768.2px) {
+  .roadmap-column__element_01 {
+    width: 32px;
+  }
+  .roadmap-column__element_01 img {
+    max-width: 32px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap-column__element_01 {
+    width: 22px;
+  }
+  .roadmap-column__element_01 img {
+    max-width: 22px;
+  }
+}
+@media (max-width: 768.2px) {
+  .roadmap-column__element_02 {
+    width: 30px;
+  }
+  .roadmap-column__element_02 img {
+    max-width: 30px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap-column__element_02 {
+    width: 20px;
+  }
+  .roadmap-column__element_02 img {
+    max-width: 20px;
+  }
+}
+@media (max-width: 768.2px) {
+  .roadmap-column__element_03 {
+    width: 46px;
+  }
+  .roadmap-column__element_03 img {
+    max-width: 46px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap-column__element_03 {
+    width: 36px;
+  }
+  .roadmap-column__element_03 img {
+    max-width: 36px;
+  }
+}
+@media (max-width: 768.2px) {
+  .roadmap-column__element_04 {
+    width: 56px;
+  }
+  .roadmap-column__element_04 img {
+    max-width: 56px;
+  }
+}
+@media (max-width: 530.2px) {
+  .roadmap-column__element_04 {
+    width: 46px;
+  }
+  .roadmap-column__element_04 img {
+    max-width: 46px;
+  }
 }
 
 .faq__body {
