@@ -1953,10 +1953,10 @@ body._lock-scroll {
 }
 .page__faq {
   /* Если меньше контейнера */
-  padding-bottom: 400px;
+  padding-bottom: 420px;
 }
 @media (max-width: 1130px) {
   .page__faq {
-    padding-bottom: calc(100px + 300 * ((100vw - 320px) / 810));
+    padding-bottom: calc(100px + 320 * ((100vw - 320px) / 810));
   }
 }
