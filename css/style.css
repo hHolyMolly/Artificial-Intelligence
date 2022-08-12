@@ -255,6 +255,7 @@ body.ie ._ibg img {
 body {
   background-image: url("../img/page/bg.jpg");
   background-position: center 0;
+  background-repeat: no-repeat;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #222;
   /* Если меньше контейнера */
@@ -623,7 +624,7 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .dragons__title:not(:last-child) {
-    margin-bottom: calc(45px + 20 * ((100vw - 320px) / 810));
+    margin-bottom: calc(25px + 40 * ((100vw - 320px) / 810));
   }
 }
 .dragons__column {
@@ -804,7 +805,7 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .play__title:not(:last-child) {
-    margin-bottom: calc(45px + 20 * ((100vw - 320px) / 810));
+    margin-bottom: calc(25px + 40 * ((100vw - 320px) / 810));
   }
 }
 .play__column {
@@ -895,12 +896,12 @@ body._lock-scroll {
 }
 @media (max-width: 768.2px) and (max-width: 1130px) {
   .play-column__card {
-    padding-right: calc(30px + -10 * ((100vw - 320px) / 810));
+    padding-right: calc(45px + -25 * ((100vw - 320px) / 810));
   }
 }
 @media (max-width: 768.2px) and (max-width: 1130px) {
   .play-column__card {
-    padding-left: calc(30px + -10 * ((100vw - 320px) / 810));
+    padding-left: calc(45px + -25 * ((100vw - 320px) / 810));
   }
 }
 @media (max-width: 768.2px) and (max-width: 1130px) {
@@ -962,6 +963,288 @@ body._lock-scroll {
   font-size: 14px;
   line-height: 142.8571428571%;
   font-weight: 400;
+}
+
+.token__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.token__title:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 65px;
+}
+@media (max-width: 1130px) {
+  .token__title:not(:last-child) {
+    margin-bottom: calc(25px + 40 * ((100vw - 320px) / 810));
+  }
+}
+.token__inner {
+  /* Если меньше контейнера */
+  padding-top: 60px;
+  /* Если меньше контейнера */
+  padding-left: 80px;
+  /* Если меньше контейнера */
+  padding-right: 80px;
+  /* Если меньше контейнера */
+  padding-bottom: 60px;
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+}
+@media (max-width: 1130px) {
+  .token__inner {
+    padding-top: calc(25px + 35 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .token__inner {
+    padding-left: calc(15px + 65 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .token__inner {
+    padding-right: calc(15px + 65 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .token__inner {
+    padding-bottom: calc(25px + 35 * ((100vw - 320px) / 810));
+  }
+}
+.token__column {
+  /* Если меньше контейнера */
+  -moz-column-gap: 60px;
+       column-gap: 60px;
+  row-gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1130px) {
+  .token__column {
+    -moz-column-gap: calc(10px + 50 * ((100vw - 320px) / 810));
+         column-gap: calc(10px + 50 * ((100vw - 320px) / 810));
+  }
+}
+.token__column:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 30px;
+}
+@media (max-width: 1130px) {
+  .token__column:not(:last-child) {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 768.2px) {
+  .token__column {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.token__text {
+  text-align: center;
+  /* Если меньше контейнера */
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}
+@media (max-width: 1130px) {
+  .token__text {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 810));
+  }
+}
+
+.token-column__card {
+  /* Если меньше контейнера */
+  padding-top: 30px;
+  /* Если меньше контейнера */
+  padding-right: 20px;
+  /* Если меньше контейнера */
+  padding-left: 20px;
+  max-width: 230px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1 auto;
+  border: 1px solid #222;
+  text-align: center;
+}
+@media (max-width: 1130px) {
+  .token-column__card {
+    padding-top: calc(25px + 5 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .token-column__card {
+    padding-right: calc(15px + 5 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .token-column__card {
+    padding-left: calc(15px + 5 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 768.2px) {
+  .token-column__card {
+    max-width: 425px;
+  }
+}
+.token-column__image {
+  /* Если меньше контейнера */
+  max-width: 130px;
+}
+@media (max-width: 1130px) {
+  .token-column__image {
+    max-width: calc(80px + 50 * ((100vw - 320px) / 810));
+  }
+}
+.token-column__image img {
+  max-width: 100%;
+}
+.token-column__image:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 40px;
+}
+@media (max-width: 1130px) {
+  .token-column__image:not(:last-child) {
+    margin-bottom: calc(20px + 20 * ((100vw - 320px) / 810));
+  }
+}
+.token-column__name {
+  /* Если меньше контейнера */
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 700;
+}
+@media (max-width: 1130px) {
+  .token-column__name {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 810));
+  }
+}
+.token-column__name:not(:last-child) {
+  margin-bottom: 5px;
+}
+.token-column__text {
+  /* Если меньше контейнера */
+  font-size: 16px;
+  line-height: 20px;
+}
+@media (max-width: 1130px) {
+  .token-column__text {
+    font-size: calc(14px + 2 * ((100vw - 320px) / 810));
+  }
+}
+
+.faq__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.faq__title:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 65px;
+}
+@media (max-width: 1130px) {
+  .faq__title:not(:last-child) {
+    margin-bottom: calc(25px + 40 * ((100vw - 320px) / 810));
+  }
+}
+.faq__spollers {
+  padding-top: 40px;
+  /* Если меньше контейнера */
+  padding-right: 115px;
+  /* Если меньше контейнера */
+  padding-left: 115px;
+  /* Если меньше контейнера */
+  padding-bottom: 70px;
+  width: 100%;
+  background-color: #fff;
+}
+@media (max-width: 1130px) {
+  .faq__spollers {
+    padding-right: calc(20px + 95 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .faq__spollers {
+    padding-left: calc(20px + 95 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .faq__spollers {
+    padding-bottom: calc(50px + 20 * ((100vw - 320px) / 810));
+  }
+}
+
+.faq-spollers__item:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 20px;
+}
+@media (max-width: 1130px) {
+  .faq-spollers__item:not(:last-child) {
+    margin-bottom: calc(10px + 10 * ((100vw - 320px) / 810));
+  }
+}
+.faq-spollers__btn {
+  padding: 10px 30px 10px 0px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  border-bottom: 1px solid #c7c7c7;
+  background-color: transparent;
+  /* Если меньше контейнера */
+  font-size: 20px;
+  line-height: 130%;
+  font-weight: 400;
+  text-align: left;
+}
+@media (max-width: 1130px) {
+  .faq-spollers__btn {
+    font-size: calc(12px + 8 * ((100vw - 320px) / 810));
+  }
+}
+.faq-spollers__btn:before, .faq-spollers__btn:after {
+  content: "";
+  width: 2px;
+  /* Если меньше контейнера */
+  height: 20px;
+  position: absolute;
+  /* Если меньше контейнера */
+  right: 20px;
+  transition: transform 0.3s ease 0s;
+  background-color: #004c9d;
+}
+@media (max-width: 1130px) {
+  .faq-spollers__btn:before, .faq-spollers__btn:after {
+    height: calc(15px + 5 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .faq-spollers__btn:before, .faq-spollers__btn:after {
+    right: calc(10px + 10 * ((100vw - 320px) / 810));
+  }
+}
+.faq-spollers__btn:after {
+  transform: rotate(90deg);
+}
+.faq-spollers__btn._active:before {
+  transform: rotate(90deg);
+}
+.faq-spollers__body {
+  padding: 10px 0px;
+  /* Если меньше контейнера */
+  font-size: 18px;
+  line-height: 130%;
+  font-weight: 400;
+}
+@media (max-width: 1130px) {
+  .faq-spollers__body {
+    font-size: calc(14px + 4 * ((100vw - 320px) / 810));
+  }
 }
 
 @media (min-width: 992.2px) {
@@ -1093,5 +1376,23 @@ body._lock-scroll {
 @media (max-width: 1130px) {
   .page__play {
     padding-bottom: calc(40px + 55 * ((100vw - 320px) / 810));
+  }
+}
+.page__token {
+  /* Если меньше контейнера */
+  padding-bottom: 95px;
+}
+@media (max-width: 1130px) {
+  .page__token {
+    padding-bottom: calc(40px + 55 * ((100vw - 320px) / 810));
+  }
+}
+.page__faq {
+  /* Если меньше контейнера */
+  padding-bottom: 300px;
+}
+@media (max-width: 1130px) {
+  .page__faq {
+    padding-bottom: calc(100px + 200 * ((100vw - 320px) / 810));
   }
 }
