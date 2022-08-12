@@ -1137,6 +1137,226 @@ body._lock-scroll {
   }
 }
 
+.roadmap__body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.roadmap__title:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 65px;
+}
+@media (max-width: 1130px) {
+  .roadmap__title:not(:last-child) {
+    margin-bottom: calc(25px + 40 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap__title_second {
+  position: absolute;
+  /* Если меньше контейнера */
+  top: 90px;
+  /* Если меньше контейнера */
+  right: 100px;
+  opacity: 0.6;
+  /* Если меньше контейнера */
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 400;
+}
+@media (max-width: 1130px) {
+  .roadmap__title_second {
+    top: calc(20px + 70 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .roadmap__title_second {
+    right: calc(20px + 80 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .roadmap__title_second {
+    font-size: calc(18px + 12 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap__inner {
+  /* Если меньше контейнера */
+  padding-top: 60px;
+  /* Если меньше контейнера */
+  padding-right: 100px;
+  /* Если меньше контейнера */
+  padding-left: 100px;
+  /* Если меньше контейнера */
+  padding-bottom: 60px;
+  width: 95%;
+  position: relative;
+  background-color: #fff;
+}
+@media (max-width: 1130px) {
+  .roadmap__inner {
+    padding-top: calc(50px + 10 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .roadmap__inner {
+    padding-right: calc(20px + 80 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .roadmap__inner {
+    padding-left: calc(20px + 80 * ((100vw - 320px) / 810));
+  }
+}
+@media (max-width: 1130px) {
+  .roadmap__inner {
+    padding-bottom: calc(30px + 30 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap__column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.roadmap-column__line {
+  width: 13px;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  z-index: 2;
+  background-color: #67a7e0;
+}
+.roadmap-column__item {
+  position: relative;
+  /* Если меньше контейнера */
+  min-height: 90px;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item {
+    min-height: calc(60px + 30 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item:not(:last-child) {
+  /* Если меньше контейнера */
+  margin-bottom: 30px;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item:not(:last-child) {
+    margin-bottom: calc(20px + 10 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item_content {
+  /* Если меньше контейнера */
+  min-height: 90px;
+  padding: 10px 15px;
+  max-width: 56.9%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item_content {
+    min-height: calc(60px + 30 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item_first .roadmap-column__item_content {
+  flex-direction: row;
+  left: 0;
+  background-color: #e8e5b0;
+}
+.roadmap-column__item_first .roadmap-column__element_01 {
+  right: 40px;
+}
+.roadmap-column__item_first .roadmap-column__element_02 {
+  right: 45px;
+}
+.roadmap-column__item_first .roadmap-column__element_03 {
+  right: 32px;
+}
+.roadmap-column__item_first .roadmap-column__element_04 {
+  right: 8px;
+}
+.roadmap-column__item_first .roadmap-column__title {
+  flex: 0 1 150px;
+}
+.roadmap-column__item_second .roadmap-column__item_content {
+  flex-direction: row-reverse;
+  background-color: #dadada;
+  right: 0;
+}
+.roadmap-column__item_second .roadmap-column__element_01 {
+  /* Если меньше контейнера */
+  left: 40px;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item_second .roadmap-column__element_01 {
+    left: calc(20px + 20 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item_second .roadmap-column__element_02 {
+  /* Если меньше контейнера */
+  left: 45px;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item_second .roadmap-column__element_02 {
+    left: calc(25px + 20 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item_second .roadmap-column__element_03 {
+  /* Если меньше контейнера */
+  left: 32px;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item_second .roadmap-column__element_03 {
+    left: calc(17px + 15 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item_second .roadmap-column__element_04 {
+  /* Если меньше контейнера */
+  left: 8px;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__item_second .roadmap-column__element_04 {
+    left: calc(0px + 8 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__item_second .roadmap-column__list {
+  flex: 0 1 170px;
+}
+.roadmap-column__title {
+  /* Если меньше контейнера */
+  font-size: 30px;
+  line-height: 120%;
+  font-weight: 400;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__title {
+    font-size: calc(18px + 12 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__list {
+  display: flex;
+  flex-direction: column;
+}
+.roadmap-column__list-item {
+  /* Если меньше контейнера */
+  font-size: 13px;
+  line-height: 116.6666666667%;
+  font-weight: 400;
+}
+@media (max-width: 1130px) {
+  .roadmap-column__list-item {
+    font-size: calc(10px + 3 * ((100vw - 320px) / 810));
+  }
+}
+.roadmap-column__element {
+  position: absolute;
+  z-index: 3;
+}
+
 .faq__body {
   display: flex;
   flex-direction: column;
@@ -1384,6 +1604,15 @@ body._lock-scroll {
 }
 @media (max-width: 1130px) {
   .page__token {
+    padding-bottom: calc(40px + 55 * ((100vw - 320px) / 810));
+  }
+}
+.page__roadmap {
+  /* Если меньше контейнера */
+  padding-bottom: 95px;
+}
+@media (max-width: 1130px) {
+  .page__roadmap {
     padding-bottom: calc(40px + 55 * ((100vw - 320px) / 810));
   }
 }
