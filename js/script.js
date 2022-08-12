@@ -397,3 +397,40 @@ function scrollToBlock() {
 	});
 }
 scrollToBlock();
+
+function scrollBacklight() {
+	const headerLinks = document.querySelectorAll('.header-menu__list-link')
+	const sections = document.querySelectorAll('section')
+
+	if (headerLinks.length > 0) {
+		if (sections.length > 0) {
+			document.addEventListener('scroll', () => {
+
+				sections.forEach((section) => {
+					const top = section.getBoundingClientRect().top
+
+					if (top <= 250) {
+
+						const attribut = section.getAttribute('id')
+						headerLinks.forEach((headerLink) => {
+							const id = headerLink.getAttribute('data-link')
+							if (id === attribut) {
+								headerLink.classList.add('_active')
+							} else {
+								headerLink.classList.remove('_active')
+							}
+
+
+						})
+
+					}
+				})
+
+
+			})
+		}
+
+	}
+}
+
+scrollBacklight()

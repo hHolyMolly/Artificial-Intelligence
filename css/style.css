@@ -510,6 +510,9 @@ body._lock-scroll {
   font-weight: 400;
   color: #fff;
 }
+.header-menu__list-link._active {
+  color: #d67360;
+}
 @media (max-width: 992.2px) {
   .header-menu__list-link {
     padding: 15px;
@@ -1618,10 +1621,10 @@ body._lock-scroll {
 }
 .page__faq {
   /* Если меньше контейнера */
-  padding-bottom: 300px;
+  padding-bottom: 400px;
 }
 @media (max-width: 1130px) {
   .page__faq {
-    padding-bottom: calc(100px + 200 * ((100vw - 320px) / 810));
+    padding-bottom: calc(100px + 300 * ((100vw - 320px) / 810));
   }
 }
