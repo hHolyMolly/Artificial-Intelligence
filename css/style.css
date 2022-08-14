@@ -1295,7 +1295,7 @@ body._lock-scroll {
 }
 @media (max-width: 830.2px) and (max-width: 1130px) {
   .roadmap-column__item {
-    min-height: calc(90px + 20 * ((100vw - 320px) / 810));
+    min-height: calc(95px + 15 * ((100vw - 320px) / 810));
   }
 }
 .roadmap-column__item_content {
@@ -1323,7 +1323,7 @@ body._lock-scroll {
 }
 @media (max-width: 830.2px) and (max-width: 1130px) {
   .roadmap-column__item_content {
-    min-height: calc(90px + 20 * ((100vw - 320px) / 810));
+    min-height: calc(95px + 15 * ((100vw - 320px) / 810));
   }
 }
 .roadmap-column__item_first .roadmap-column__item_content {
