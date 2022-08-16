@@ -274,20 +274,19 @@ body._lock-scroll {
   position: relative;
   overflow: hidden;
 }
-.wrapper:before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  background-color: #86ab59;
-}
 
 .wrapper-image {
   position: absolute;
   z-index: 10;
+}
+.wrapper-image:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #86ab59;
 }
 
 .content {
