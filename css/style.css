@@ -253,7 +253,6 @@ body.ie ._ibg img {
 }
 
 body {
-  background-color: #86ab59;
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
   color: #222;
   /* Если меньше контейнера */
@@ -292,7 +291,6 @@ body._lock-scroll {
 }
 
 .header,
-.footer,
 .page,
 .navigation {
   position: relative;
@@ -1716,6 +1714,9 @@ body._lock-scroll {
   }
 }
 
+.faq {
+  background-color: #86ab59;
+}
 .faq__body {
   display: flex;
   flex-direction: column;
