@@ -935,15 +935,6 @@ body._lock-scroll {
 .footer-actions__language {
   position: relative;
 }
-@media (any-hover: hover) {
-  .footer-actions__language:hover .footer-language__global path,
-.footer-actions__language:hover .footer-language__arrow path {
-    stroke: rgba(255, 255, 255, 0.7);
-  }
-  .footer-actions__language:hover .footer-language__selected {
-    color: rgba(255, 255, 255, 0.7);
-  }
-}
 
 .footer-socials__list {
   display: flex;
@@ -988,6 +979,15 @@ body._lock-scroll {
 }
 .footer-language__button._active .footer-language__arrow {
   transform: rotate(90deg);
+}
+@media (any-hover: hover) {
+  .footer-language__button:hover .footer-language__global path,
+.footer-language__button:hover .footer-language__arrow path {
+    stroke: rgba(255, 255, 255, 0.7);
+  }
+  .footer-language__button:hover .footer-language__selected {
+    color: rgba(255, 255, 255, 0.7);
+  }
 }
 .footer-language__global path {
   transition: stroke 0.2s ease 0s;

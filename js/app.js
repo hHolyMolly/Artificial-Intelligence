@@ -1,3 +1,16 @@
+function save(name, value) {
+	localStorage.setItem(name, value)
+}
+function get(name) {
+	return localStorage.getItem(name)
+}
+function rem(name) {
+	localStorage.removeItem(name)
+}
+function off() {
+	localStorage.clear();
+}
+
 const timePreloader = 1000;
 
 //<====================================================================================================================================>//
@@ -1262,14 +1275,47 @@ if (document.getElementById('preloader')) {
 //< " Подключение селектов " >=============================================================================================================>//
 //<====================================================================================================================================>//
 
-function mySelects() {
-	const selects = document.querySelectorAll("[data-select-body]");
+const selects = document.querySelectorAll("[data-select-body]");
 
+// Заготовка на получение localStorage
+function selectGetLocal(whatGet = "") {
+	const checkGet = get(whatGet);
+
+	if (checkGet === null) {
+	} else {
+		const select = document.querySelector(`[data-select-${whatGet}]`)
+		if (select) {
+			const selectedValue = select.querySelector("[data-select-selected]");
+			selectedValue.setAttribute("data-select-selected", checkGet);
+
+			select.querySelectorAll("[data-select-option]").forEach((item) => {
+				if (selectedValue.dataset.selectSelected === item.dataset.selectOption) {
+					selectedValue.innerText = item.innerText;
+				}
+			});
+		}
+	}
+}
+
+// Заготовка на сохранение localStorage
+function selectSaveLocal(e, item, optionSelected = "") {
+	if (e.closest(`[data-select-${optionSelected}]`)) {
+		save(`${optionSelected}`, item.dataset.selectOption);
+	}
+}
+
+selectGetLocal(whatGet = "language");
+
+// Функция добавление/удаления активного класса у селекта + делегирование и т.д.
+function mySelects() {
+
+	// Добавляем активный класс
 	function addClass(elem) {
 		elem.querySelector("[data-select-button]").classList.add("_active");
 		elem.querySelector("[data-select-dropdown]").classList.add("_active");
 	}
 
+	// Удаляем активный класс
 	function removeClass(elem) {
 		elem.querySelector("[data-select-button]").classList.remove("_active");
 		elem.querySelector("[data-select-dropdown]").classList.remove("_active");
@@ -1298,6 +1344,8 @@ function mySelects() {
 
 				const selected = select.querySelector("[data-select-selected]");
 				selected.innerText = option.innerText;
+
+				selectSaveLocal(elementTarget, option, optionSelected = "language");
 
 				if (option.getAttribute("data-select-option") && selected.getAttribute("data-select-selected")) {
 					selected.setAttribute("data-select-selected", `${option.dataset.selectOption}`);
