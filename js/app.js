@@ -11,7 +11,7 @@ function off() {
 	localStorage.clear();
 }
 
-const timePreloader = 1000;
+const timePreloader = 2000;
 
 //<====================================================================================================================================>//
 //< " Определение типа устройства " >=============================================================================================================>//
@@ -36,28 +36,6 @@ if (isMobile.any()) {
 //< " Подключение основных скриптов " >=============================================================================================================>//
 //<====================================================================================================================================>//
 
-// // Чекаем основной баланс
-// let balanceHumane = async function getBalance() {
-// 	// Данные моего контракта
-// 	const addressMyContractForBalance = "0x614b9eDfCcA168C6e2D71d0CB07C6bFC9f135390";
-// 	const abiMyContractForBalance = [{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "bytes", "name": "response", "type": "bytes" }], "name": "Response", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": false, "internalType": "uint256", "name": "amount", "type": "uint256" }, { "indexed": true, "internalType": "uint256", "name": "ids", "type": "uint256" }], "name": "depAfterArbitrage", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "uint256", "name": "id", "type": "uint256" }, { "indexed": true, "internalType": "address", "name": "user", "type": "address" }], "name": "depUser", "type": "event" }, { "inputs": [], "name": "DEVELOPER", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "DEVFEE", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "MAXDEP", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "MINDEP", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "REFFEE", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "uint24[]", "name": "_id", "type": "uint24[]" }], "name": "autoTransfer", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "balance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "bonus", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "dep", "outputs": [{ "internalType": "uint256", "name": "deposit", "type": "uint256" }, { "internalType": "uint256", "name": "timestamp", "type": "uint256" }, { "internalType": "uint256", "name": "ids", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "_ref", "type": "address" }, { "internalType": "uint256", "name": "_amount", "type": "uint256" }], "name": "deposit", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_amount", "type": "uint256" }, { "internalType": "uint256", "name": "_id", "type": "uint256" }], "name": "depositAfterArbitrage", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint24", "name": "", "type": "uint24" }], "name": "ids", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "init", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "lastAddressDeposit", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "lastTimeDeposit", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "markContract", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "uint256", "name": "_maxDep", "type": "uint256" }], "name": "maxDep", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "refTransfer", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "renounceOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "token", "outputs": [{ "internalType": "contract IERC20", "name": "", "type": "address" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "bytes", "name": "_id", "type": "bytes" }, { "internalType": "uint256", "name": "_amount", "type": "uint256" }, { "internalType": "address", "name": "_to", "type": "address" }, { "internalType": "address", "name": "_contract", "type": "address" }], "name": "trade", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }], "name": "transferOwnership", "outputs": [], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "", "type": "address" }], "name": "users", "outputs": [{ "internalType": "uint256", "name": "deposit", "type": "uint256" }, { "internalType": "uint256", "name": "timestamp", "type": "uint256" }, { "internalType": "uint256", "name": "refReward", "type": "uint256" }, { "internalType": "uint256", "name": "totalRefValue", "type": "uint256" }, { "internalType": "uint256", "name": "amountDeposit", "type": "uint256" }, { "internalType": "uint128", "name": "id", "type": "uint128" }], "stateMutability": "view", "type": "function" }];
-// 	const providerForBalance = new ethers.providers.Web3Provider(window.ethereum, "any");
-
-// 	const myContractForBalance = new ethers.Contract(addressMyContractForBalance, abiMyContractForBalance, providerForBalance);
-
-// 	const balanceMyContract = await myContractForBalance.balance();
-
-// 	const parse = parseInt(balanceMyContract);
-// 	balanceHumane = parse / Math.pow(10, 18);
-// 	return balanceHumane;
-// 	// document.getElementById("balanceContract").innerText = balanceHumane.toFixed(1);
-// }
-
-// let first = function qwe() {
-// 	first = 1;
-// 	return first;
-// }
-// console.log(first())
 
 
 //<====================================================================================================================================>//
@@ -478,7 +456,6 @@ function myPopups() {
 		})();
 	}
 }
-myPopups();
 
 //<====================================================================================================================================>//
 //< " Добавление хедеру класса при скролле " >=============================================================================================================>//
@@ -1213,60 +1190,48 @@ myRatingStars(); */
 //< " Подключение слайдера " >=============================================================================================================>//
 //<====================================================================================================================================>//
 
-/* const slidersDefault = () => {
-	const sliders = document.querySelectorAll('.swiper');
-	const prevArrow = document.querySelectorAll('.swiper-button-prev');
-	const nextArrow = document.querySelectorAll('.swiper-button-next');
-	const pagination = document.querySelectorAll('.swiper-pagination');
+function slidersDefault() {
+	const sliders = document.querySelectorAll('.page__main-slider.swiper');
+	const pagination = document.querySelectorAll('.main-slider__pagination.swiper-pagination');
 
 	sliders.forEach((slider, index) => {
 		let sliderLength = slider.children[0].children.length;
 		let result = (sliderLength > 1) ? [index] : false;
 
 		const swiper = new Swiper(slider, {
-			slidesPerView: 1,
-			spaceBetween: 15,
 			grabCursor: true,
 			loop: result,
-			speed: 800,
+			speed: 500,
+			spaceBetween: 15,
+			slidesPerView: 1,
 
-			// autoplay: {
-			// 	delay: 3500,
-			// },
+			autoplay: {
+				delay: 3500,
+			},
 
 			pagination: {
 				el: pagination[index],
 				clickable: true,
 			},
 
-			navigation: {
-				nextEl: nextArrow[index],
-				prevEl: prevArrow[index],
-			},
-
 			breakpoints: {
-				767.8: {},
+				1439.98: {
+					spaceBetween: 30,
+					slidesPerView: 5,
+				},
+				1023.98: {
+					slidesPerView: 4,
+				},
+				991.98: {
+					slidesPerView: 3,
+				},
+				768.98: {
+					slidesPerView: 3,
+				},
+				480.98: {
+					slidesPerView: 2,
+				},
 			}
-		});
-	});
-}
-window.addEventListener('load', slidersDefault); */
-
-//<====================================================================================================================================>//
-//< " Подключение прелоадера " >=============================================================================================================>//
-//<====================================================================================================================================>//
-
-if (document.getElementById('preloader')) {
-	window.addEventListener("load", () => {
-		function loadPage() {
-			return new Promise((resolve) => {
-				setTimeout(resolve, timePreloader);
-			});
-		}
-
-		loadPage().then(() => {
-			document.body.classList.remove("_lock-scroll");
-			document.getElementById('preloader').remove();
 		});
 	});
 }
@@ -1298,16 +1263,20 @@ function selectGetLocal(whatGet = "") {
 }
 
 // Заготовка на сохранение localStorage
-function selectSaveLocal(e, item, optionSelected = "") {
+function selectSaveLocal(e, item, optionSelected = "", reloadPage = false) {
 	if (e.closest(`[data-select-${optionSelected}]`)) {
 		save(`${optionSelected}`, item.dataset.selectOption);
 	}
-}
 
-selectGetLocal(whatGet = "language");
+	if (reloadPage === true) {
+		location.reload();
+	}
+}
 
 // Функция добавление/удаления активного класса у селекта + делегирование и т.д.
 function mySelects() {
+
+	selectGetLocal(whatGet = "language");
 
 	// Добавляем активный класс
 	function addClass(elem) {
@@ -1345,7 +1314,7 @@ function mySelects() {
 				const selected = select.querySelector("[data-select-selected]");
 				selected.innerText = option.innerText;
 
-				selectSaveLocal(elementTarget, option, optionSelected = "language");
+				selectSaveLocal(elementTarget, option, optionSelected = "language", reloadPage = true);
 
 				if (option.getAttribute("data-select-option") && selected.getAttribute("data-select-selected")) {
 					selected.setAttribute("data-select-selected", `${option.dataset.selectOption}`);
@@ -1365,4 +1334,26 @@ function mySelects() {
 		});
 	});
 }
-mySelects();
+
+//<====================================================================================================================================>//
+//< " Подключение прелоадера " >=============================================================================================================>//
+//<====================================================================================================================================>//
+
+if (document.getElementById("preloader")) {
+	window.addEventListener("load", () => {
+		function loadPage() {
+			return new Promise((resolve) => {
+				setTimeout(resolve, timePreloader);
+
+				slidersDefault();
+				mySelects();
+				myPopups();
+			});
+		}
+
+		loadPage().then(() => {
+			document.getElementById("preloader").remove();
+			document.body.classList.remove("_lock-scroll");
+		});
+	});
+}
