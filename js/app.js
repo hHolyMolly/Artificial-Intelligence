@@ -1263,13 +1263,17 @@ function selectGetLocal(whatGet = "") {
 }
 
 // Заготовка на сохранение localStorage
-function selectSaveLocal(e, item, optionSelected = "", reloadPage = false) {
+function selectSaveLocal(e, item, optionSelected = "", reloadPage = false, selected, textChange) {
 	if (e.closest(`[data-select-${optionSelected}]`)) {
 		save(`${optionSelected}`, item.dataset.selectOption);
 	}
 
 	if (reloadPage === true) {
 		location.reload();
+	}
+
+	if (textChange === true) {
+		selected.innerText = option.innerText;
 	}
 }
 
@@ -1312,9 +1316,8 @@ function mySelects() {
 				removeClass(select);
 
 				const selected = select.querySelector("[data-select-selected]");
-				selected.innerText = option.innerText;
 
-				selectSaveLocal(elementTarget, option, optionSelected = "language", reloadPage = true);
+				selectSaveLocal(elementTarget, option, optionSelected = "language", reloadPage = true, selected, textChange = false);
 
 				if (option.getAttribute("data-select-option") && selected.getAttribute("data-select-selected")) {
 					selected.setAttribute("data-select-selected", `${option.dataset.selectOption}`);
