@@ -11,7 +11,7 @@ function off() {
 	localStorage.clear();
 }
 
-const timePreloader = 2000;
+const timePreloader = 1000;
 
 //<====================================================================================================================================>//
 //< " Определение типа устройства " >=============================================================================================================>//
@@ -276,60 +276,6 @@ function myBurger() {
 myBurger();
 
 //<====================================================================================================================================>//
-//< " Подключение счетчика (плюс/минус) " >=============================================================================================================>//
-//<====================================================================================================================================>//
-
-/*
-	Снипет (HTML): count
-*/
-
-/* function quantity() {
-	if (document.querySelectorAll('[data-quantity]').length > 0) {
-		let minValue = 1, // Минимальное значение
-			maxValue = 20; // Максимальное значение
-
-		const counters = document.querySelectorAll('[data-quantity]');
-
-		counters.forEach((counter) => {
-			const input = counter.querySelector("[data-quantity-input]"),
-				plus = counter.querySelector("[data-quantity-plus]"),
-				minus = counter.querySelector("[data-quantity-minus]");
-
-			let value = parseInt(input.value);
-
-			plus.addEventListener("click", function () {
-				value++;
-				changeValueInput()
-			});
-
-			minus.addEventListener("click", function () {
-				value--;
-				changeValueInput()
-			});
-
-			window.addEventListener("DOMContentLoaded", changeValueInput);
-
-			function changeValueInput() {
-				onButton(minus, minValue);
-				onButton(plus, maxValue);
-
-				function onButton(button, whatValue) {
-					if (value === whatValue) {
-						button.setAttribute("disabled", "");
-					} else {
-						button.removeAttribute("disabled");
-					}
-
-					input.value = value;
-					input.setAttribute("value", value)
-				}
-			}
-		});
-	}
-}
-quantity(); */
-
-//<====================================================================================================================================>//
 //< " Подключение модальных окон (попап) " >=============================================================================================================>//
 //<====================================================================================================================================>//
 
@@ -456,26 +402,6 @@ function myPopups() {
 		})();
 	}
 }
-
-//<====================================================================================================================================>//
-//< " Добавление хедеру класса при скролле " >=============================================================================================================>//
-//<====================================================================================================================================>//
-
-/* function scrollHeader() {
-	const header = document.querySelector('.header');
-
-	const callback = function (entries) {
-		if (entries[0].isIntersecting) {
-			header.classList.remove('_scroll');
-		} else {
-			header.classList.add('_scroll');
-		}
-	};
-
-	const headerObserver = new IntersectionObserver(callback);
-	headerObserver.observe(header);
-}
-scrollHeader();; */
 
 //<====================================================================================================================================>//
 //< " Подключение спойлеров/аккардеонов " >=============================================================================================================>//
@@ -674,7 +600,7 @@ mySpollers();
 //< " Подключение валидации форм " >=============================================================================================================>//
 //<====================================================================================================================================>//
 
-/* function myForms() {
+function myForms() {
 	const forms = document.querySelectorAll("form");
 
 	if (forms.length > 0) {
@@ -1082,109 +1008,7 @@ mySpollers();
 		});
 	}
 }
-myForms(); */
-
-//<====================================================================================================================================>//
-//< " Подключение табов " >=============================================================================================================>//
-//<====================================================================================================================================>//
-
-/* function myTabs() {
-	document.addEventListener("click", (e) => {
-		const elementTarget = e.target;
-
-		if (elementTarget.closest("[data-tab-btn]")) {
-			const att = elementTarget.getAttribute("data-tab-btn");
-			const modernAtt = `[data-tab="${att}"]`;
-
-			const itemTab = elementTarget.closest("[data-tabs]").querySelector(`${modernAtt}`);
-
-			itemTab.style.display = "block";
-			const buttons = elementTarget.closest("[data-tabs]").querySelectorAll("[data-tab-btn]");
-
-			console.log(elementTarget.closest("[data-tabs]").querySelector(`${modernAtt}`).getBoundingClientRect())
-
-			buttons.forEach(button => {
-				button.classList.remove("_active");
-			});
-			elementTarget.classList.add("_active");
-
-			const tabs = elementTarget.closest("[data-tabs]").querySelectorAll("[data-tab]");
-
-			tabs.forEach((tab) => {
-				if (tab.getAttribute("data-tab") === att) {
-				} else {
-					tab.style.display = "none";
-				}
-			});
-		}
-	});
-}
-myTabs(); */
-
-//<====================================================================================================================================>//
-//< " Подключение звездного рейтинга " >=============================================================================================================>//
-//<====================================================================================================================================>//
-
-/*
-	Снипет (HTML): rtng
-*/
-
-/* function myRatingStars() {
-	const ratings = document.querySelectorAll("[data-rating-stars]");
-
-	if (ratings.length > 0) {
-		let ratingActive, ratingValue;
-
-		for (let index = 0; index < ratings.length; index++) {
-			const rating = ratings[index];
-
-			function initRating() {
-				ratingVars(rating)
-				setRating()
-
-				if (rating.hasAttribute("data-rating-stars-set")) {
-					const items = rating.querySelectorAll("[data-rating-item]");
-					for (let index = 0; index < items.length; index++) {
-						const item = items[index];
-
-						item.style.cursor = "pointer";
-
-						item.addEventListener("mouseenter", function () {
-							ratingVars(rating)
-							setRating(item.value)
-						});
-						item.addEventListener("mouseleave", function () {
-							setRating()
-						});
-						item.addEventListener("click", function () {
-							ratingVars(rating)
-
-							if (this.getAttribute("data-rating-text")) {
-								ratingValue.innerHTML = this.getAttribute("data-rating-text");
-							} else {
-								ratingValue.innerHTML = index + 1;
-							}
-
-							setRating()
-						});
-					}
-				}
-			}
-			initRating();
-
-			function ratingVars() {
-				ratingActive = rating.querySelector("[data-rating-stars-active]");
-				ratingValue = rating.querySelector("[data-rating-stars-value]");
-			}
-
-			function setRating(index = ratingValue.innerHTML) {
-				const ratingActiveWidth = index / 0.05;
-				ratingActive.style.width = `${ratingActiveWidth}%`;
-			}
-		}
-	}
-}
-myRatingStars(); */
+myForms();
 
 //<====================================================================================================================================>//
 //< " Подключение слайдера " >=============================================================================================================>//
@@ -1357,6 +1181,11 @@ if (document.getElementById("preloader")) {
 		loadPage().then(() => {
 			document.getElementById("preloader").remove();
 			document.body.classList.remove("_lock-scroll");
+
+			new WOW({
+				mobile: false,
+				offset: 200,
+			}).init();
 		});
 	});
 }
