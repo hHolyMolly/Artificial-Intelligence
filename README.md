@@ -1,6 +1,6 @@
-# Artificial Intelligence
+# Artificial Intelligence - Верстка
 
-Используемые технологии:
+### Используемые технологии:
 
 - HTML/CSS;
 - JS;
