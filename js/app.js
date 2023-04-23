@@ -1015,50 +1015,30 @@ myForms();
 //<====================================================================================================================================>//
 
 function slidersDefault() {
-	const sliders = document.querySelectorAll('.page__main-slider.swiper');
-	const pagination = document.querySelectorAll('.main-slider__pagination.swiper-pagination');
+   const slidersArr = document.querySelectorAll(".swiper");
+   const paginationArr = document.querySelectorAll(".swiper-pagination");
 
-	sliders.forEach((slider, index) => {
-		let sliderLength = slider.children[0].children.length;
-		let result = (sliderLength > 1) ? [index] : false;
+   slidersArr.forEach((slider, index) => {
+      let sliderLength = slider.children[0].children.length;
+      let result = sliderLength > 1 ? [index] : false;
 
-		const swiper = new Swiper(slider, {
-			grabCursor: true,
-			loop: result,
-			speed: 500,
-			spaceBetween: 15,
-			slidesPerView: 1,
+      const swiper = new Swiper(slider, {
+         grabCursor: true,
+         loop: result,
+         speed: 500,
+         spaceBetween: 15,
+         slidesPerView: 1,
 
-			autoplay: {
-				delay: 3500,
-			},
+         pagination: {
+            el: paginationArr[index],
+            clickable: true,
+         },
 
-			pagination: {
-				el: pagination[index],
-				clickable: true,
-			},
-
-			breakpoints: {
-				1439.98: {
-					spaceBetween: 30,
-					slidesPerView: 5,
-				},
-				1023.98: {
-					slidesPerView: 4,
-				},
-				991.98: {
-					slidesPerView: 3,
-				},
-				768.98: {
-					slidesPerView: 3,
-				},
-				480.98: {
-					slidesPerView: 2,
-				},
-			}
-		});
-	});
+         breakpoints: {},
+      });
+   });
 }
+
 
 //<====================================================================================================================================>//
 //< " Подключение селектов " >=============================================================================================================>//
@@ -1167,25 +1147,29 @@ function mySelects() {
 //<====================================================================================================================================>//
 
 if (document.getElementById("preloader")) {
-	window.addEventListener("load", () => {
-		function loadPage() {
-			return new Promise((resolve) => {
-				setTimeout(resolve, timePreloader);
+   window.addEventListener("load", () => {
+      setTimeout(() => {
+         window.scrollTo(0, 0);
+      }, 1);
 
-				slidersDefault();
-				mySelects();
-				myPopups();
-			});
-		}
+      function loadPage() {
+         return new Promise((resolve) => {
+            setTimeout(resolve, timePreloader);
 
-		loadPage().then(() => {
-			document.getElementById("preloader").remove();
-			document.body.classList.remove("_lock-scroll");
+            slidersDefault();
+            mySelects();
+            myPopups();
+         });
+      }
 
-			new WOW({
-				mobile: false,
-				offset: 200,
-			}).init();
-		});
-	});
+      loadPage().then(() => {
+         document.getElementById("preloader").remove();
+         document.body.classList.remove("_lock-scroll");
+
+         new WOW({
+            mobile: false,
+            offset: 200,
+         }).init();
+      });
+   });
 }
