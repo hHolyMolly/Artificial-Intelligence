@@ -1,15 +1,4 @@
-# Artificial Intelligence - Верстка
+![Preview](https://github.com/hHolyMolly/Artificial-Intelligence/blob/main/img/Preview.png)
 
-### Используемые технологии:
-
-- HTML/CSS;
-- JS;
-- Слайдер - Swiper;
-- Резиновый адаптив;
-- Препроцессор SCSS;
-- Бэм;
-- Анимация при прокрутке;
-- Flexbox;
-- Pixel Perfect.
-
-Ссылка на макет - https://www.figma.com/file/YLyZvvr8ebSuA3kNQHhnhz/Artificial-Intelligence?node-id=2%3A6&t=5Yl1J2LY2EXni8j8-0
+# Description:
+A stylish and modern website with scroll animations, featuring an elegant design and smooth interactivity. The site is fully responsive, ensuring optimal display on any device. Key features include smooth scroll animations with Wow.js, interactive Swiper slider, BEM + SCSS for code structure, and Pixel Perfect layout. The project is designed for scalability and ease of maintenance.
