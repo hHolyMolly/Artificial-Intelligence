@@ -11,7 +11,7 @@ function off() {
 	localStorage.clear();
 }
 
-const timePreloader = 1000;
+const timePreloader = 300;
 
 //<====================================================================================================================================>//
 //< " Определение типа устройства " >=============================================================================================================>//
@@ -85,7 +85,7 @@ function dynamicAdaptive() {
 			const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
 				return item.breakpoint === mediaBreakpoint;
 			});
-			matchMedia.addListener(function () {
+			matchMedia.addEventListener('change', function () {
 				_this.mediaHandler(matchMedia, оbjectsFilter);
 			});
 			this.mediaHandler(matchMedia, оbjectsFilter);
@@ -466,7 +466,7 @@ function mySpollers() {
 					}
 				});
 				// Событие
-				matchMedia.addListener(function () {
+				matchMedia.addEventListener('change', function () {
 					initSpollers(spollersArray, matchMedia);
 				});
 				initSpollers(spollersArray, matchMedia);
